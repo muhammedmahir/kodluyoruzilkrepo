@@ -1,0 +1,12 @@
+def deep_reverse(x):
+    if isinstance(x, list):
+        x = [deep_reverse(subx) for subx in x] # reverse every element
+        x = x[::-1] # reverse the list itself
+    elif isinstance(x, str):
+        x = x[::-1]
+    return x
+
+list1 = ['abc','def',[['abc','def']],['abc','def']]
+reversed_list1 = deep_reverse(list1) 
+print(reversed_list1)
+# [['fed', 'cba'], [['fed', 'cba']], 'fed', 'cba']
